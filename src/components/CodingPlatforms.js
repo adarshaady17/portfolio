@@ -8,11 +8,14 @@ const CodingPlatforms = () => {
     {
       name: "LeetCode",
       icon: <FaCode />,
-      profile: "https://leetcode.com/adarshaady17",
+      profile: "https://leetcode.com/u/adarshaady/",
       stats: [
-        { label: "Problems Solved", value: "100+" },
-        { label: "Contest Rating", value: "1000+" },
-        { label: "Badges Earned", value: "15+" },
+        { label: "Problems Solved", value: "339" },
+        { label: "Easy Problems", value: "162/899" },
+        { label: "Medium Problems", value: "167/1918" },
+        { label: "Hard Problems", value: "10/869" },
+        { label: "Max Streak", value: "19 days" },
+        { label: "Active Days", value: "152 days" },
       ],
       description: "Competitive programming and algorithm practice platform",
       color: "#ff6b35",
@@ -20,11 +23,12 @@ const CodingPlatforms = () => {
     {
       name: "HackerRank",
       icon: <FaTrophy />,
-      profile: "https://hackerrank.com/adarshaady17",
+      profile: "https://www.hackerrank.com/profile/adarshsahu6236",
       stats: [
-        { label: "Skills Verified", value: "8+" },
-        { label: "Certificates", value: "5+" },
-        { label: "Ranking", value: "Top 20%" },
+        { label: "Problem Solving", value: "5 ⭐" },
+        { label: "SQL", value: "5 ⭐" },
+        { label: "Java", value: "4 ⭐" },
+        { label: "C Language", value: "Badge" },
       ],
       description: "Technical skills assessment and certification platform",
       color: "#2ec866",
@@ -114,19 +118,29 @@ const CodingPlatforms = () => {
                 <div className="achievement-item">
                   <FaChartLine className="achievement-bullet" />
                   <span>
-                    Consistent problem-solving on competitive platforms
+                    Solved 339 problems on LeetCode with strong performance
+                    across all difficulty levels
                   </span>
                 </div>
                 <div className="achievement-item">
                   <FaTrophy className="achievement-bullet" />
                   <span>
-                    Multiple skill certifications in various technologies
+                    Achieved 5-star rating in Problem Solving and SQL on
+                    HackerRank
                   </span>
                 </div>
                 <div className="achievement-item">
                   <FaMedal className="achievement-bullet" />
                   <span>
-                    Active participation in coding contests and challenges
+                    Earned 4-star rating in Java and C Language badge on
+                    HackerRank
+                  </span>
+                </div>
+                <div className="achievement-item">
+                  <FaCode className="achievement-bullet" />
+                  <span>
+                    Maintained 19-day maximum streak and 152 active days on
+                    LeetCode
                   </span>
                 </div>
               </div>

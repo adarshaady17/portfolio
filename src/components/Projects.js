@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import "./Projects.css";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
       title: "MyPrepSpot",
@@ -19,12 +21,10 @@ const Projects = () => {
         "Google Maps API",
         "Vercel",
       ],
-      github: "https://github.com/adarshaady17",
       live: "https://myprepspot.com",
-      image: "/api/placeholder/400/300",
     },
     {
-      title: "QuickKart",
+      title: "Quick-Kart",
       description:
         "Full-stack E-commerce Grocery Platform with secure authentication, inventory management, payment integration, and comprehensive admin panel for product approval and order management.",
       technologies: [
@@ -37,18 +37,8 @@ const Projects = () => {
         "Razorpay",
         "Vercel",
       ],
-      github: "https://github.com/adarshaady17",
+      github: "https://github.com/adarshaady17/Quick-Kart",
       live: "https://quick-kart-lilac.vercel.app",
-      image: "/api/placeholder/400/300",
-    },
-    {
-      title: "Sorting Algorithm Visualizer",
-      description:
-        "Interactive web application to visualize sorting algorithms including Insertion, Selection, Bubble, Merge, and Quick Sort with efficiency comparison (O(n²) vs. O(n log n)).",
-      technologies: ["HTML", "CSS", "JavaScript", "Vercel"],
-      github: "https://github.com/adarshaady17",
-      live: "https://sorting-visualizer-three-pi.vercel.app",
-      image: "/api/placeholder/400/300",
     },
     {
       title: "Career-Friendly",
@@ -61,10 +51,9 @@ const Projects = () => {
         "Express.js",
         "MongoDB",
         "Cloudinary",
+        "JavaScript",
       ],
-      github: "https://github.com/adarshaady17",
-      live: "https://github.com/adarshaady17",
-      image: "/api/placeholder/400/300",
+      github: "https://github.com/adarshaady17/Career-Friendly",
     },
     {
       title: "WanderLust",
@@ -78,11 +67,68 @@ const Projects = () => {
         "Cloudinary",
         "Render",
       ],
-      github: "https://github.com/adarshaady17",
-      live: "https://wanderlust-k6jr.onrender.com",
-      image: "/api/placeholder/400/300",
+      github: "https://github.com/adarshaady17/WanderLust",
+      live: "https://wanderlust-k6jr.onrender.com/listings",
+    },
+    {
+      title: "Sorting Visualizer",
+      description:
+        "Interactive web application to visualize sorting algorithms including Insertion, Selection, Bubble, Merge, and Quick Sort with efficiency comparison (O(n²) vs. O(n log n)).",
+      technologies: ["HTML", "CSS", "JavaScript", "Vercel"],
+      github: "https://github.com/adarshaady17/Sorting-Visualizer",
+      live: "https://sorting-visualizer-three-pi.vercel.app",
+    },
+    {
+      title: "FastKart",
+      description:
+        "E-commerce platform with modern UI/UX, shopping cart functionality, product filtering, and responsive design for seamless online shopping experience.",
+      technologies: [
+        "React.js",
+        "CSS3",
+        "JavaScript",
+        "Local Storage",
+        "Vercel",
+      ],
+      github: "https://github.com/adarshaady17/FastKart",
+    },
+    {
+      title: "Todo App",
+      description:
+        "Task management application with add, edit, delete, and mark complete functionality. Features local storage persistence and clean, intuitive interface.",
+      technologies: [
+        "React.js",
+        "CSS3",
+        "JavaScript",
+        "Local Storage",
+        "Vercel",
+      ],
+      github: "https://github.com/adarshaady17/Todoapp",
+    },
+    {
+      title: "Tic Tac Toe",
+      description:
+        "Classic Tic Tac Toe game with interactive UI, win detection, score tracking, and reset functionality. Built with modern JavaScript and responsive design.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Vercel"],
+      github: "https://github.com/adarshaady17/Tic_Tak_Toe",
+      live: "https://tic-tak-toe-weld-xi.vercel.app/",
+    },
+    {
+      title: "Countdown Timer",
+      description:
+        "Customizable countdown timer application with multiple timer options, visual progress indicators, and audio notifications for time management.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Web Audio API", "Vercel"],
+      github: "https://github.com/adarshaady17/Countdown-timer",
+    },
+    {
+      title: "Simon Game",
+      description:
+        "Memory-based Simon game with increasing difficulty levels, sound effects, and score tracking. Tests and improves memory and pattern recognition skills.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Web Audio API", "Vercel"],
+      github: "https://github.com/adarshaady17/simon-Game",
     },
   ];
+
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section id="projects" className="projects">
@@ -100,7 +146,7 @@ const Projects = () => {
           </h2>
 
           <div className="projects-grid">
-            {projects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <motion.div
                 key={project.title}
                 className="project-card"
@@ -110,12 +156,6 @@ const Projects = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
               >
-                <div className="project-image">
-                  <div className="project-placeholder">
-                    <span>Project Image</span>
-                  </div>
-                </div>
-
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">{project.description}</p>
@@ -129,19 +169,42 @@ const Projects = () => {
                   </div>
 
                   <div className="project-links">
-                    <a href={project.github} className="project-link">
-                      <FaGithub />
-                      Code
-                    </a>
-                    <a href={project.live} className="project-link">
-                      <FaExternalLinkAlt />
-                      Live Demo
-                    </a>
+                    {project.github && (
+                      <a href={project.github} className="project-link">
+                        <FaGithub />
+                        Code
+                      </a>
+                    )}
+                    {project.live && (
+                      <a href={project.live} className="project-link">
+                        <FaExternalLinkAlt />
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {projects.length > 6 && (
+            <motion.div
+              className="see-more-container"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <motion.button
+                className="see-more-btn"
+                onClick={() => setShowAll(!showAll)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {showAll ? "Show Less" : "See More Projects"}
+              </motion.button>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>

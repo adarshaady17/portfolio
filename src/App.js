@@ -6,7 +6,8 @@ import Skills from "./components/Skills";
 import About from "./components/About";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
-import Education from "./components/Education";
+import Education from "./components/Eduction";
+import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import CodingPlatforms from "./components/CodingPlatforms";
 import Contact from "./components/Contact";
@@ -21,10 +22,11 @@ function App() {
         <Services />
         <About />
       </div>
-      <Projects />
       <Education />
-      <Certifications />
+      <Experience />
+      <Projects />
       <CodingPlatforms />
+      <Certifications />
       <Contact />
     </div>
   );

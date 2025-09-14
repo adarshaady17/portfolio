@@ -4,7 +4,7 @@ import "./About.css";
 
 const About = () => {
   const stats = [
-    { number: "5+", label: "Completed Projects" },
+    { number: "15+", label: "Completed Projects" },
     { number: "8.13", label: "MCA CGPA" },
     { number: "1+", label: "Years of experience" },
   ];

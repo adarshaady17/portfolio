@@ -4,23 +4,45 @@ import "./Skills.css";
 
 const Skills = () => {
   const skills = [
-    "JavaScript",
-    "Node.js",
-    "Express.js",
-    "React.js",
-    "MongoDB",
-    "MySQL",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
-    "Bootstrap",
+    // Programming Languages
     "Java",
     "C Programming",
+    "JavaScript",
+
+    // Backend Technologies
+    "Node.js",
+    "Express.js",
     "RESTful APIs",
-    "Vercel",
-    "Render",
+    "Object Oriented Programming",
+
+    // Frontend Technologies
+    "React.js",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Bootstrap",
+
+    // Databases
+    "MySQL",
+    "MongoDB",
+
+    // Version Control & Deployment
     "Git",
     "GitHub",
+    "Vercel",
+    "Render",
+
+    // Languages
+    "Hindi",
+    "English",
+
+    // Soft Skills
+    "Teamwork",
+    "Time Management",
+    "Problem-solving",
+
+    // Computer Science
+    "DSA (Data Structures & Algorithms)",
   ];
 
   return (
