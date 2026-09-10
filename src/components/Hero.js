@@ -100,7 +100,7 @@ const Hero = () => {
               <div className="orange-circle-large"></div>
               <div className="orange-circle-small"></div>
               <img
-                src="/profile-photo.jpg"
+                src="/profile-photo.png"
                 alt="Adarsh Sahu"
                 className="profile-photo"
               />
