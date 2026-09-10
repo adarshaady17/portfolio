@@ -21,7 +21,7 @@ const Projects = () => {
         "Google Maps API",
         "Vercel",
       ],
-      live: "https://myprepspot.com",
+      live: "https://myprepspot.vercel.app/",
     },
     {
       title: "Quick-Kart",
